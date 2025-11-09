@@ -12,12 +12,13 @@ int main() {
         cin >> nums[i];
     }
     sort(nums,nums+n);
-    for(int j = 0; j <= n; j++){
-        cout << nums[j];
+    for(int j = 0; j < n; j++){
+        cout << nums[j] << " ";
     }
+    cout << "\n";
     sort(nums,nums+n,greater<int>());
-    for(int x = 0; x <= n; x++){
-        cout << nums[x];
+    for(int x = 0; x < n; x++){
+        cout << nums[x] << " ";
     }
     // Please write your code here.
 
