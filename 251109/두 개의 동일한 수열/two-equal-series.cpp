@@ -5,7 +5,7 @@ using namespace std;
 int n;
 int A[100];
 int B[100];
-
+int x = 0;
 int main() {
     cin >> n;
 
@@ -21,12 +21,16 @@ int main() {
     sort(B, B+n);
 
     for(int i = 0; i < n; i++){
-        if(A[i] == B[i]){
-            cout << "Yes";
+        if(A[i] == B[i])
+        {
+            x += 1;
         }
-        else{
-            cout << "No";
-        }
+    }
+    if(n == x){
+        cout << "Yes";
+    }
+    else{
+        cout << "No";
     }
 
     // Please write your code here.
