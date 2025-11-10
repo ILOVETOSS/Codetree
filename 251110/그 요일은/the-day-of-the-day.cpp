@@ -1,8 +1,9 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-    int m1,d1,m2,d2;
+    int m1, d1, m2, d2;
     string target;
     cin >> m1 >> d1 >> m2 >> d2;
     cin >> target;
@@ -19,22 +20,23 @@ int main() {
 
     int total_days = end_day - start_day + 1; // 시작일 포함
 
-    // 시작일 기준 요일 = Mon = index 0
+    // 시작일 기준 요일 = Mon = 0
     int start_idx = 0;
 
     // 찾는 요일 index
     int target_idx = 0;
     for(int i=0;i<7;i++){
-        if(week[i]==target) target_idx = i;
+        if(week[i] == target) target_idx = i;
     }
 
     // 첫 번째 목표 요일까지 offset
     int offset = (target_idx - start_idx + 7) % 7;
 
+    // 등장 횟수 계산
     int remaining_days = total_days - offset;
     int count = 0;
     if(remaining_days > 0){
-        count = 1 + (remaining_days-1)/7;
+        count = (remaining_days + 6) / 7; // 첫 번째 포함
     }
 
     cout << count;
