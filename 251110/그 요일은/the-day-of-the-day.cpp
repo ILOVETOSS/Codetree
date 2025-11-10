@@ -19,7 +19,10 @@ int main() {
 
     int total_days = end_day - start_day + 1; // 시작일 포함
 
-    int start_idx = 0; // 기준 2/5 Mon
+    // 시작일 기준 요일 = Mon = index 0
+    int start_idx = 0;
+
+    // 찾는 요일 index
     int target_idx = 0;
     for(int i=0;i<7;i++){
         if(week[i]==target) target_idx = i;
@@ -28,11 +31,10 @@ int main() {
     // 첫 번째 목표 요일까지 offset
     int offset = (target_idx - start_idx + 7) % 7;
 
-    // 시작일부터 끝일까지 목표 요일 등장 횟수
     int remaining_days = total_days - offset;
     int count = 0;
     if(remaining_days > 0){
-        count = 1 + (remaining_days - 1) / 7;
+        count = 1 + (remaining_days-1)/7;
     }
 
     cout << count;
