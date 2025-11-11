@@ -5,7 +5,7 @@ using namespace std;
 int n;
 int x1[100], x2[100];
 
-int arr[100];
+int arr[100] = {};
 int main() {
     cin >> n;
 
