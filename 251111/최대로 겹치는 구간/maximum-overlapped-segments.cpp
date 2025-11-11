@@ -18,7 +18,7 @@ int main() {
         }
     }
     int mx = 0;
-    for(int i = 0; i < 100; i++){
+    for(int i = 0; i <= 100; i++){
         mx = max(mx, arr[i]);
     }
     // Please write your code here.
