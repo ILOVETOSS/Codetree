@@ -1,46 +1,41 @@
 #include <iostream>
-#include <stack> 
+#include <stack>
+#include <string>
+
 using namespace std;
 
-int N;
-string command[10000];
-int value[10000];
-stack<int> s;
+int n;
+stack<int> s;  
+
 int main() {
-    cin >> N;
+    // 입력:
+    cin >> n;
 
-    for (int i = 0; i < N; i++) {
-        cin >> command[i];
-        if (command[i] == "push") {
-            cin >> value[i];
+    for(int i = 0; i < n; i++) {
+        string command;
+        cin >> command;
+        if(command == "push") {
+            int x;
+            cin >> x;
+            s.push(x);
         }
-    }
-    for(int j = 0; j <= N; j++){
-        if(command[j] == "push"){
-            s.push(value[j]);
-        }
-        if(command[j] == "pop"){
+        else if(command == "pop") {
+            int v = s.top();
             s.pop();
-            cout << s.top();
+            cout << v << endl;
         }
-        if(command[j] == "size"){
-            cout << s.size(); 
+        else if(command == "size") {
+            cout << s.size() << endl;
         }
-        if(command[j] == "empty"){
-            if(s.empty()){
-                cout << "1";
-            }
-            else{
-                cout << "0";
-            }
+        else if(command == "empty") {
+            if(s.empty())
+                cout << 1 << endl;
+            else
+                cout << 0 << endl;
         }
-        if(command[j] == "top"){
-            cout << s.top();
+        else {
+            cout << s.top() << endl;
         }
-
     }
-
-    // Please write your code here.
-
     return 0;
 }
